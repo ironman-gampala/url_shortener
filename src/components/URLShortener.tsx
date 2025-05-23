@@ -23,6 +23,9 @@ const URLShortener = () => {
   const [urls, setUrls] = useState<ShortenedUrl[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Get the domain
+  const domain = window.location.origin;
+
   useEffect(() => {
     setUrls(getUrls());
   }, []);
@@ -71,7 +74,7 @@ const URLShortener = () => {
 
     toast({
       title: "URL shortened successfully!",
-      description: `Your short link is ready: zeta/${shortCode}`,
+      description: `Your short link is ready: ${domain}/${shortCode}`,
     });
 
     setIsLoading(false);
@@ -132,7 +135,7 @@ const URLShortener = () => {
                 Custom Alias (Optional)
               </label>
               <div className="flex items-center gap-2">
-                <span className="text-gray-500 font-medium">zeta/</span>
+                <span className="text-gray-500 font-medium">{domain}/</span>
                 <Input
                   placeholder="my-custom-link"
                   value={customAlias}
