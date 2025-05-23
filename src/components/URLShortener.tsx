@@ -37,25 +37,32 @@ const URLShortener = () => {
       return;
     }
 
-    if (customAlias && urls.some(url => url.customAlias === customAlias)) {
-      toast({
-        title: "Custom alias already exists",
-        description: "Please choose a different custom alias",
-        variant: "destructive",
-      });
-      return;
+    if (customAlias) {
+      const existingUrl = urls.find(url => url.shortCode === customAlias);
+      if (existingUrl) {
+        toast({
+          title: "Custom alias already exists",
+          description: "Please choose a different custom alias",
+          variant: "destructive",
+        });
+        return;
+      }
     }
 
     setIsLoading(true);
 
+    const shortCode = customAlias || generateShortCode();
+    
     const newUrl: ShortenedUrl = {
       id: Date.now().toString(),
       originalUrl,
-      shortCode: customAlias || generateShortCode(),
+      shortCode,
       customAlias: customAlias || undefined,
       createdAt: new Date().toISOString(),
       clicks: 0,
     };
+
+    console.log("Creating new URL with shortCode:", shortCode);
 
     const updatedUrls = saveUrl(newUrl);
     setUrls(updatedUrls);
@@ -64,7 +71,7 @@ const URLShortener = () => {
 
     toast({
       title: "URL shortened successfully!",
-      description: "Your short link is ready to use",
+      description: `Your short link is ready: zeta/${shortCode}`,
     });
 
     setIsLoading(false);
