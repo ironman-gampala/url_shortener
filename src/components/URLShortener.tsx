@@ -125,7 +125,7 @@ const URLShortener = () => {
                 Custom Alias (Optional)
               </label>
               <div className="flex items-center gap-2">
-                <span className="text-gray-500 font-medium">short.ly/</span>
+                <span className="text-gray-500 font-medium">zeta/</span>
                 <Input
                   placeholder="my-custom-link"
                   value={customAlias}

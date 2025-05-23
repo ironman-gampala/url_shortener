@@ -20,7 +20,7 @@ interface URLItemProps {
 }
 
 const URLItem: React.FC<URLItemProps> = ({ url, onCopy, onDelete }) => {
-  const shortUrl = `https://short.ly/${url.shortCode}`;
+  const shortUrl = `https://zeta/${url.shortCode}`;
   const createdDate = new Date(url.createdAt).toLocaleDateString();
 
   const truncateUrl = (url: string, maxLength: number = 50) => {
