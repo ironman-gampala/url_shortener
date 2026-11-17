@@ -1,73 +1,44 @@
-# Welcome to your Lovable project
+# URL Shortener
 
-## Project info
+Browser-based URL shortener with custom aliases and click tracking. Links are stored in your browser (`localStorage`) — no backend required.
 
-**URL**: https://lovable.dev/projects/b75cda94-771a-45ee-afe7-45bbe271dd75
+## About
 
-## How can I edit this code?
+This project turns long links into short ones you can share.
 
-There are several ways of editing your application.
+| Feature | What it does |
+|---|---|
+| **Shorten** | Paste any `http://` or `https://` URL and get a 6-character short code |
+| **Custom alias** | Optional vanity path, e.g. `/my-talk` instead of a random code |
+| **Click count** | Each redirect increments a local click counter |
+| **Copy / delete** | Manage your short links from the dashboard |
+| **Redirect** | Visiting `/:shortCode` sends you to the original URL |
 
-**Use Lovable**
+**How storage works:** everything lives in the browser. Clearing site data removes your links. Short links only resolve on the same browser/device that created them (demo / personal-use app, not a hosted short-link service).
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b75cda94-771a-45ee-afe7-45bbe271dd75) and start prompting.
+Built with **Vite**, **React**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui**.
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Quick start
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+git clone https://github.com/ironman-gampala/url_shortener.git
+cd url_shortener
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open the local URL Vite prints (usually `http://localhost:5173`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Scripts
 
-**Use GitHub Codespaces**
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Local development server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | ESLint |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Repo
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b75cda94-771a-45ee-afe7-45bbe271dd75) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Owner:** [ironman-gampala](https://github.com/ironman-gampala)
+- **GitHub:** https://github.com/ironman-gampala/url_shortener

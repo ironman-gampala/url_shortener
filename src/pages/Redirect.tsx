@@ -21,11 +21,8 @@ const Redirect = () => {
       // Increment the clicks count
       incrementClicks(matchingUrl.id);
       
-      // Set the redirect URL
       setRedirectUrl(matchingUrl.originalUrl);
-      console.log(`Redirecting to: ${matchingUrl.originalUrl}`);
     } else {
-      console.log(`No URL found for shortCode: ${shortCode}`);
       setNotFound(true);
     }
   }, [shortCode]);
