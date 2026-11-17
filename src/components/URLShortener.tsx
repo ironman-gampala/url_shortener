@@ -65,8 +65,6 @@ const URLShortener = () => {
       clicks: 0,
     };
 
-    console.log("Creating new URL with shortCode:", shortCode);
-
     const updatedUrls = saveUrl(newUrl);
     setUrls(updatedUrls);
     setOriginalUrl('');
@@ -105,7 +103,8 @@ const URLShortener = () => {
             URL Shortener
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Transform long URLs into short, memorable links with custom aliases
+            Turn long links into short ones with optional custom aliases.
+            Links and click counts stay in this browser — no account needed.
           </p>
         </div>
 

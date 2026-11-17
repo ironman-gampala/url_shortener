@@ -42,7 +42,6 @@ export const saveUrl = (url: ShortenedUrl): ShortenedUrl[] => {
   }
   
   localStorage.setItem('shortened-urls', JSON.stringify(updatedUrls));
-  console.log("Saved URLs:", updatedUrls);
   return updatedUrls;
 };
 
@@ -68,20 +67,4 @@ export const incrementClicks = (id: string): void => {
     url.id === id ? { ...url, clicks: url.clicks + 1 } : url
   );
   localStorage.setItem('shortened-urls', JSON.stringify(updatedUrls));
-};
-
-// Test function to create example with ironman-iiits custom alias
-export const createExampleWithCustomAlias = (): void => {
-  const customAlias = "ironman-iiits";
-  const exampleUrl: ShortenedUrl = {
-    id: Date.now().toString(),
-    originalUrl: "https://example.com/very-long-url-for-ironman",
-    shortCode: customAlias,
-    customAlias: customAlias,
-    createdAt: new Date().toISOString(),
-    clicks: 0
-  };
-  
-  saveUrl(exampleUrl);
-  console.log(`Example URL created with custom alias: zeta/${customAlias}`);
 };
